@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
  <html lang="pt-BR">
  <head>
      <meta charset="UTF-8">
@@ -66,7 +66,10 @@
  <body class="min-h-screen flex flex-col">
      <header class="bg-primary-dark text-white p-4 shadow-lg fixed w-full top-0 z-50">
          <div class="container mx-auto flex justify-between items-center">
-             <img src="image_0396c8.png" alt="Logo Netuno" class="h-10 mr-4">
+             <!-- Verifique se o arquivo image_0396c8.png está na mesma pasta do seu arquivo HTML.
+             Se não estiver, o src precisará ser atualizado.
+             O atributo onerror abaixo exibirá um logo de fallback se a imagem original não for encontrada. -->
+             <img src="image_0396c8.png" alt="Logo Netuno" class="h-10 mr-4" onerror="this.onerror=null;this.src='https://placehold.co/40x40/E5DDC8/004369?text=NE';">
              <h1 class="text-3xl font-black">NETUNO</h1>
              <nav>
                  <ul class="flex space-x-6">
@@ -385,3 +388,4 @@
      </script>
  </body>
  </html>
+ 
