@@ -49,13 +49,17 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2.5rem;
+            /* Removido o font-size aqui para que o SVG controle o tamanho */
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             transition: transform 0.3s ease-in-out;
             z-index: 1000;
         }
         .whatsapp-button:hover {
             transform: scale(1.1);
+        }
+        .whatsapp-button svg {
+            width: 36px; /* Ajuste o tamanho do ícone SVG */
+            height: 36px; /* Ajuste o tamanho do ícone SVG */
         }
     </style>
 </head>
@@ -136,7 +140,7 @@
                             <label for="client-email" class="block text-lg font-semibold mb-2">Seu Email para Contato:</label>
                             <input type="email" id="client-email" name="clientEmail" class="w-full p-3 border border-gray-300 rounded-md focus:ring-accent-blue focus:border-accent-blue" placeholder="seuemail@exemplo.com" required>
                         </div>
-                       
+                        
                         <div class="mb-6">
                             <label for="client-phone" class="block text-lg font-semibold mb-2">Seu Telefone para Contato:</label>
                             <input type="tel" id="client-phone" name="clientPhone" class="w-full p-3 border border-gray-300 rounded-md focus:ring-accent-blue focus:border-accent-blue" placeholder="(XX) XXXXX-XXXX" required>
@@ -217,7 +221,7 @@
             <p class="mb-4">Telefone: <a href="tel:+5511959961063" class="text-accent-blue hover:underline">(11) 95996-1063</a></p>
             <p class="mb-4">
                 Fale conosco pelo WhatsApp: 
-                <a href="https://wa.me/5511959961063" class="text-accent-blue hover:underline" target="_blank">
+                <a href="https://wa.me/5511959961063?text=Ol%C3%A1%2C%20venho%20do%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%3F%20%F0%9F%98%81" class="text-accent-blue hover:underline" target="_blank">
                     (11) 95996-1063
                 </a>
             </p>
@@ -225,8 +229,10 @@
         </div>
     </footer>
 
-    <a href="https://wa.me/5511959961063" class="whatsapp-button" target="_blank" aria-label="Fale conosco pelo WhatsApp">
-        &#x2709;
+    <a href="https://wa.me/5511959961063?text=Ol%C3%A1%2C%20venho%20do%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%3F%20%F0%9F%98%81" class="whatsapp-button" target="_blank" aria-label="Fale conosco pelo WhatsApp">
+        <svg viewBox="0 0 24 24" width="24" height="24" class="fill-current">
+            <path d="M12.04 2c-5.45 0-9.91 4.46-9.91 9.91 0 1.75.5 3.44 1.46 4.96L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.45 0 9.91-4.46 9.91-9.91S17.49 2 12.04 2zm3.62 14.07c-.12.3-.47.39-.7.26-.3-.15-1.76-.87-2.03-.97-.28-.1-.48-.15-.69.11-.2.27-.78.97-.95 1.16-.17.2-.34.22-.63.09-.3-.12-.99-.37-1.88-.93-.68-.4-1.29-.9-1.71-1.57-.42-.68-.45-1.25-.32-1.46.13-.2.3-.35.45-.49.15-.15.2-.26.3-.44.1-.19.05-.36-.02-.5-.07-.13-.69-1.65-.95-2.26-.25-.6-.5-1.04-.54-1.12-.04-.08-.33-.27-.7-.6-.37-.34-.97-.93-.95-1.76.02-.85.42-1.24.58-1.4.15-.17.33-.2.45-.2.12 0 .26.02.43.08.17.06.41.16.63.43.23.27.75.76.79.82.04.06.07.12.01.25-.06.13-.39.42-.51.56-.12.15-.25.32-.34.42-.1.1-.01.19.12.4.12.2 .4.66.86 1.05.47.4.9.65 1.29.83.4.18.7.25.94.2.25-.05.8-.32 1.05-.4.26-.08.4-.13.62.01.22.14.73.84 1.05 1.03.32.2.55.3.63.31.07.02.32.01.48-.05.15-.06.47-.18.89-.35.42-.18.76-.32 1.07-.4.32-.08.6-.13.88.07.28.2.35.62.2 1.08-.14.45-.53.94-.96 1.29z"/>
+        </svg>
     </a>
 
     <div id="product-modal" class="fixed inset-0 flex items-center justify-center hidden modal-overlay p-4">
@@ -253,14 +259,14 @@
 
     <script>
         const products = [
-            { id: 1, name: 'Letreiro "Love"', price: 0.00, image: 'https://placehold.co/400x300/DB1F48/FFFFFF?text=Love+Neon', description: 'Um clássico atemporal, perfeito para decorar quartos, salas ou eventos especiais. Emite uma luz suave e romântica.' },
-            { id: 2, name: 'Símbolo "Coração"', price: 0.00, image: 'https://placehold.co/400x300/01949A/FFFFFF?text=Coração+Neon', description: 'Adicione um toque de carinho e estilo ao seu ambiente com este vibrante coração LED neon.' },
-            { id: 3, name: 'Frase "Good Vibes"', price: 0.00, image: 'https://placehold.co/400x300/F8E9A1/004369?text=Good+Vibes+Neon', description: 'Mantenha a energia positiva! Ideal para escritórios, estúdios ou espaços de convivência.' },
-            { id: 4, name: 'Ícone "Raio"', price: 0.00, image: 'https://placehold.co/400x300/004369/F8E9A1?text=Raio+Neon', description: 'Um símbolo de energia e modernidade. Perfeito para gamers, bares ou ambientes descolados.' },
-            { id: 5, name: 'Letreiro "Café"', price: 0.00, image: 'https://placehold.co/400x300/DB1F48/FFFFFF?text=Café+Neon', description: 'Ideal para cafeterias, cozinhas ou cantinhos do café. Um convite luminoso para um bom momento.' },
-            { id: 6, name: 'Seta Direcional', price: 0.00, image: 'https://placehold.co/400x300/01949A/FFFFFF?text=Seta+Neon', description: 'Perfeita para indicar direções em eventos, lojas ou simplesmente como um elemento de design divertido.' },
-            { id: 7, name: 'Planeta "Saturno"', price: 0.00, image: 'https://placehold.co/400x300/F8E9A1/004369?text=Saturno+Neon', description: 'Traga o universo para mais perto com este letreiro detalhado de Saturno. Um toque cósmico para seu espaço.' },
-            { id: 8, name: 'Letreiro "Sonhe Alto"', price: 0.00, image: 'https://placehold.co/400x300/004369/F8E9A1?text=Sonhe+Alto+Neon', description: 'Inspiração diária para alcançar seus objetivos. Ideal para escritórios, quartos ou espaços criativos.' }
+            { id: 1, name: 'Letreiro "Love"', price: 250.00, image: 'https://placehold.co/400x300/DB1F48/FFFFFF?text=Love+Neon', description: 'Um clássico atemporal, perfeito para decorar quartos, salas ou eventos especiais. Emite uma luz suave e romântica.' },
+            { id: 2, name: 'Símbolo "Coração"', price: 180.00, image: 'https://placehold.co/400x300/01949A/FFFFFF?text=Coração+Neon', description: 'Adicione um toque de carinho e estilo ao seu ambiente com este vibrante coração LED neon.' },
+            { id: 3, name: 'Frase "Good Vibes"', price: 320.00, image: 'https://placehold.co/400x300/F8E9A1/004369?text=Good+Vibes+Neon', description: 'Mantenha a energia positiva! Ideal para escritórios, estúdios ou espaços de convivência.' },
+            { id: 4, name: 'Ícone "Raio"', price: 200.00, image: 'https://placehold.co/400x300/004369/F8E9A1?text=Raio+Neon', description: 'Um símbolo de energia e modernidade. Perfeito para gamers, bares ou ambientes descolados.' },
+            { id: 5, name: 'Letreiro "Café"', price: 280.00, image: 'https://placehold.co/400x300/DB1F48/FFFFFF?text=Café+Neon', description: 'Ideal para cafeterias, cozinhas ou cantinhos do café. Um convite luminoso para um bom momento.' },
+            { id: 6, name: 'Seta Direcional', price: 150.00, image: 'https://placehold.co/400x300/01949A/FFFFFF?text=Seta+Neon', description: 'Perfeita para indicar direções em eventos, lojas ou simplesmente como um elemento de design divertido.' },
+            { id: 7, name: 'Planeta "Saturno"', price: 350.00, image: 'https://placehold.co/400x300/F8E9A1/004369?text=Saturno+Neon', description: 'Traga o universo para mais perto com este letreiro detalhado de Saturno. Um toque cósmico para seu espaço.' },
+            { id: 8, name: 'Letreiro "Sonhe Alto"', price: 400.00, image: 'https://placehold.co/400x300/004369/F8E9A1?text=Sonhe+Alto+Neon', description: 'Inspiração diária para alcançar seus objetivos. Ideal para escritórios, quartos ou espaços criativos.' }
         ];
 
         let cart = JSON.parse(localStorage.getItem('cart_neon_shop')) || [];
@@ -485,4 +491,3 @@
     </script>
 </body>
 </html>
-
