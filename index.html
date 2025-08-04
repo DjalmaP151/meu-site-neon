@@ -36,6 +36,27 @@
         .scroll-mt-24 { /* Adjust for fixed header */
             scroll-margin-top: 6rem;
         }
+        /* Estilo para o botão flutuante do WhatsApp */
+        .whatsapp-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25D366; /* Cor verde do WhatsApp */
+            color: white;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease-in-out;
+            z-index: 1000;
+        }
+        .whatsapp-button:hover {
+            transform: scale(1.1);
+        }
     </style>
 </head>
 <body class="min-h-screen flex flex-col">
@@ -115,7 +136,7 @@
                             <label for="client-email" class="block text-lg font-semibold mb-2">Seu Email para Contato:</label>
                             <input type="email" id="client-email" name="clientEmail" class="w-full p-3 border border-gray-300 rounded-md focus:ring-accent-blue focus:border-accent-blue" placeholder="seuemail@exemplo.com" required>
                         </div>
-                        
+                       
                         <div class="mb-6">
                             <label for="client-phone" class="block text-lg font-semibold mb-2">Seu Telefone para Contato:</label>
                             <input type="tel" id="client-phone" name="clientPhone" class="w-full p-3 border border-gray-300 rounded-md focus:ring-accent-blue focus:border-accent-blue" placeholder="(XX) XXXXX-XXXX" required>
@@ -193,10 +214,20 @@
         <div class="container mx-auto">
             <h3 class="text-2xl font-bold mb-4">NETUNO</h3>
             <p class="mb-2">Entre em contato: <a href="mailto:netuno.netuno89@gmail.com" class="text-accent-blue hover:underline">netuno.netuno89@gmail.com</a></p>
-            <p class="mb-4">Telefone: (XX) XXXX-XXXX</p>
+            <p class="mb-4">Telefone: <a href="tel:+5511959961063" class="text-accent-blue hover:underline">(11) 95996-1063</a></p>
+            <p class="mb-4">
+                Fale conosco pelo WhatsApp: 
+                <a href="https://wa.me/5511959961063" class="text-accent-blue hover:underline" target="_blank">
+                    (11) 95996-1063
+                </a>
+            </p>
             <p>&copy; 2025 NETUNO. Todos os direitos reservados.</p>
         </div>
     </footer>
+
+    <a href="https://wa.me/5511959961063" class="whatsapp-button" target="_blank" aria-label="Fale conosco pelo WhatsApp">
+        &#x2709;
+    </a>
 
     <div id="product-modal" class="fixed inset-0 flex items-center justify-center hidden modal-overlay p-4">
         <div class="bg-white rounded-lg shadow-lg p-6 w-11/12 md:w-2/3 lg:w-1/2 max-h-[90vh] overflow-y-auto modal-content relative">
