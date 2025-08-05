@@ -9,32 +9,22 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
     <style>
-        /* Paleta de Cores: Cinza Neutro com Acentos Azul Elétrico e Rosa Choque */
-        :root {
-            --color-primary-dark: #343A40; /* Cinza Chumbo Escuro */
-            --color-secondary-light: #F8F9FA; /* Branco Gelo / Quase Branco */
-            --color-accent-blue-neon: #00BFFF; /* Azul Céu Profundo (Neon) */
-            --color-accent-pink-neon: #FF1493; /* Rosa Choque (Neon) */
-            --color-text-dark: #495057; /* Cinza Escuro para textos */
-            --color-white: #FFFFFF;
-            --color-gray-medium: #CED4DA; /* Cinza Médio */
-        }
-
+        /* Color Palette: Brilliant Blues */
         body {
             font-family: 'Inter', sans-serif;
-            background-color: var(--color-secondary-light); /* Fundo claro */
-            color: var(--color-text-dark); /* Cor de texto principal */
+            background-color: #E5DDC8; /* Beige */
+            color: #004369; /* Dark Blue */
         }
-        .text-primary-dark { color: var(--color-primary-dark); }
-        .bg-primary-dark { background-color: var(--color-primary-dark); }
-        .text-accent-blue-neon { color: var(--color-accent-blue-neon); }
-        .bg-accent-blue-neon { background-color: var(--color-accent-blue-neon); }
-        .text-accent-pink-neon { color: var(--color-accent-pink-neon); }
-        .bg-accent-pink-neon { background-color: var(--color-accent-pink-neon); }
-        .text-secondary-light { color: var(--color-secondary-light); }
-        .bg-secondary-light { background-color: var(--color-secondary-light); }
+        .text-primary-dark { color: #004369; }
+        .bg-primary-dark { background-color: #004369; }
+        .text-accent-blue { color: #01949A; }
+        .bg-accent-blue { background-color: #01949A; }
+        .text-highlight-red { color: #DB1F48; }
+        .bg-highlight-red { background-color: #DB1F48; }
+        .bg-secondary-accent { background-color: #F8E9A1; } /* Yellow */
+        .text-secondary-accent { color: #F8E9A1; }
         
-        .shadow-custom { box-shadow: 0 4px 6px -1px rgba(52, 58, 64, 0.1), 0 2px 4px -1px rgba(52, 58, 64, 0.06); }
+        .shadow-custom { box-shadow: 0 4px 6px -1px rgba(0, 67, 105, 0.1), 0 2px 4px -1px rgba(0, 67, 105, 0.06); }
         
         .modal-overlay {
             background-color: rgba(0, 0, 0, 0.7);
@@ -82,15 +72,15 @@
 
             <nav class="hidden md:block">
                 <ul class="flex space-x-6">
-                    <li><a href="#home-section" class="hover:text-accent-blue-neon transition-colors text-lg font-medium">Início</a></li>
-                    <li><a href="#products-section" class="hover:text-accent-blue-neon transition-colors text-lg font-medium">Modelos</a></li>
-                    <li><a href="#customize-section" class="hover:text-accent-blue-neon transition-colors text-lg font-medium">Personalize</a></li>
-                    <li><a href="#gallery-section" class="hover:text-accent-blue-neon transition-colors text-lg font-medium">Galeria</a></li>
+                    <li><a href="#home-section" class="hover:text-accent-blue transition-colors text-lg font-medium">Início</a></li>
+                    <li><a href="#products-section" class="hover:text-accent-blue transition-colors text-lg font-medium">Modelos</a></li>
+                    <li><a href="#customize-section" class="hover:text-accent-blue transition-colors text-lg font-medium">Personalize</a></li>
+                    <li><a href="#gallery-section" class="hover:text-accent-blue transition-colors text-lg font-medium">Galeria</a></li>
                 </ul>
             </nav>
 
             <div class="hidden md:block">
-                <a href="https://wa.me/5511959961063?text=Ol%C3%A1%2C%20venho%20do%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%3F%20%F0%9F%98%81" target="_blank" class="bg-accent-blue-neon text-white px-6 py-2 rounded-full font-semibold hover:bg-opacity-80 transition-colors">
+                <a href="https://wa.me/5511959961063?text=Ol%C3%A1%2C%20venho%20do%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%3F%20%F0%9F%98%81" target="_blank" class="bg-highlight-red text-white px-6 py-2 rounded-full font-semibold hover:bg-opacity-80 transition-colors">
                     Fale Conosco
                 </a>
             </div>
@@ -104,12 +94,12 @@
 
         <div id="mobile-menu" class="hidden md:hidden bg-primary-dark w-full text-center py-4 transition-all duration-300 ease-in-out">
             <ul class="flex flex-col space-y-4">
-                <li><a href="#home-section" class="block py-2 text-xl hover:text-accent-blue-neon transition-colors font-medium">Início</a></li>
-                <li><a href="#products-section" class="block py-2 text-xl hover:text-accent-blue-neon transition-colors font-medium">Modelos</a></li>
-                <li><a href="#customize-section" class="block py-2 text-xl hover:text-accent-blue-neon transition-colors font-medium">Personalize</a></li>
-                <li><a href="#gallery-section" class="block py-2 text-xl hover:text-accent-blue-neon transition-colors font-medium">Galeria</a></li>
+                <li><a href="#home-section" class="block py-2 text-xl hover:text-accent-blue transition-colors font-medium">Início</a></li>
+                <li><a href="#products-section" class="block py-2 text-xl hover:text-accent-blue transition-colors font-medium">Modelos</a></li>
+                <li><a href="#customize-section" class="block py-2 text-xl hover:text-accent-blue transition-colors font-medium">Personalize</a></li>
+                <li><a href="#gallery-section" class="block py-2 text-xl hover:text-accent-blue transition-colors font-medium">Galeria</a></li>
                 <li>
-                    <a href="https://wa.me/5511959961063?text=Ol%C3%A1%2C%20venho%20do%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%3F%20%F0%9F%98%81" target="_blank" class="bg-accent-blue-neon text-white px-6 py-2 rounded-full font-semibold hover:bg-opacity-80 transition-colors block mx-auto w-3/4 mt-4">
+                    <a href="https://wa.me/5511959961063?text=Ol%C3%A1%2C%20venho%20do%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%3F%20%F0%9F%98%81" target="_blank" class="bg-highlight-red text-white px-6 py-2 rounded-full font-semibold hover:bg-opacity-80 transition-colors block mx-auto w-3/4 mt-4">
                         Fale Conosco
                     </a>
                 </li>
@@ -118,16 +108,16 @@
     </header>
 
     <main class="flex-grow pt-24">
-        <section id="home-section" class="py-20 text-center bg-primary-dark text-white flex flex-col items-center justify-center min-h-[calc(100vh-6rem)]">
-            <h1 class="text-5xl md:text-7xl font-black mb-4 leading-tight">Ilumine Seu Espaço com <span class="text-accent-blue-neon">LED Neon</span> Personalizado</h1>
-            <p class="text-xl md:text-2xl max-w-3xl mx-auto mb-8 text-secondary-light">Crie atmosferas vibrantes e únicas. Perfeito para casas, eventos e negócios.</p>
+        <section id="home-section" class="py-20 text-center bg-accent-blue text-white flex flex-col items-center justify-center min-h-[calc(100vh-6rem)]">
+            <h1 class="text-5xl md:text-7xl font-black mb-4 leading-tight">Ilumine Seu Espaço com <span class="text-secondary-accent">LED Neon</span> Personalizado</h1>
+            <p class="text-xl md:text-2xl max-w-3xl mx-auto mb-8">Crie atmosferas vibrantes e únicas. Perfeito para casas, eventos e negócios.</p>
             <div class="flex space-x-4">
-                <a href="#products-section" class="bg-accent-blue-neon text-white px-8 py-4 rounded-full shadow-lg hover:bg-opacity-90 transition-colors text-xl font-semibold">Ver Modelos</a>
-                <a href="#customize-section" class="bg-secondary-light text-primary-dark px-8 py-4 rounded-full shadow-lg hover:opacity-90 transition-opacity text-xl font-semibold">Personalize o Seu</a>
+                <a href="#products-section" class="bg-highlight-red text-white px-8 py-4 rounded-full shadow-lg hover:bg-opacity-90 transition-colors text-xl font-semibold">Ver Modelos</a>
+                <a href="#customize-section" class="bg-secondary-accent text-primary-dark px-8 py-4 rounded-full shadow-lg hover:opacity-90 transition-opacity text-xl font-semibold">Personalize o Seu</a>
             </div>
         </section>
 
-        <section id="products-section" class="py-16 bg-secondary-light scroll-mt-24">
+        <section id="products-section" class="py-16 bg-E5DDC8 scroll-mt-24">
             <div class="container mx-auto px-4">
                 <h2 class="text-4xl font-black text-center mb-12 text-primary-dark">Nossos Modelos Prontos</h2>
                 <div id="product-list" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
@@ -138,16 +128,16 @@
         <section id="customize-section" class="py-16 bg-primary-dark text-white scroll-mt-24">
             <div class="container mx-auto px-4">
                 <h2 class="text-4xl font-black text-center mb-12">Crie Seu Letreiro Personalizado</h2>
-                <p class="text-lg text-center max-w-3xl mx-auto mb-10 text-secondary-light">Transforme sua ideia em luz! Preencha os detalhes abaixo para solicitar um orçamento para o seu letreiro LED neon exclusivo.</p>
+                <p class="text-lg text-center max-w-3xl mx-auto mb-10">Transforme sua ideia em luz! Preencha os detalhes abaixo para solicitar um orçamento para o seu letreiro LED neon exclusivo.</p>
                 <div class="bg-white text-primary-dark p-8 rounded-lg shadow-lg max-w-2xl mx-auto">
                     <form id="quote-form" action="https://formspree.io/f/mzzvvknq" method="POST">
                         <div class="mb-6">
                             <label for="custom-text" class="block text-lg font-semibold mb-2">Texto ou Frase:</label>
-                            <input type="text" id="custom-text" name="customText" class="w-full p-3 border border-gray-300 rounded-md focus:ring-accent-blue-neon focus:border-accent-blue-neon" placeholder="Ex: 'Good Vibes Only'" required>
+                            <input type="text" id="custom-text" name="customText" class="w-full p-3 border border-gray-300 rounded-md focus:ring-accent-blue focus:border-accent-blue" placeholder="Ex: 'Good Vibes Only'" required>
                         </div>
                         <div class="mb-6">
                             <label for="font-style" class="block text-lg font-semibold mb-2">Estilo da Fonte:</label>
-                            <select id="font-style" name="fontStyle" class="w-full p-3 border border-gray-300 rounded-md focus:ring-accent-blue-neon focus:border-accent-blue-neon">
+                            <select id="font-style" name="fontStyle" class="w-full p-3 border border-gray-300 rounded-md focus:ring-accent-blue focus:border-accent-blue">
                                 <option value="modern">Moderno</option>
                                 <option value="script">Cursivo</option>
                                 <option value="retro">Retrô</option>
@@ -156,7 +146,7 @@
                         </div>
                         <div class="mb-6">
                             <label for="neon-color" class="block text-lg font-semibold mb-2">Cor do Neon:</label>
-                            <select id="neon-color" name="neonColor" class="w-full p-3 border border-gray-300 rounded-md focus:ring-accent-blue-neon focus:border-accent-blue-neon">
+                            <select id="neon-color" name="neonColor" class="w-full p-3 border border-gray-300 rounded-md focus:ring-accent-blue focus:border-accent-blue">
                                 <option value="red">Vermelho</option>
                                 <option value="blue">Azul</option>
                                 <option value="green">Verde</option>
@@ -167,7 +157,7 @@
                         </div>
                         <div class="mb-6">
                             <label for="neon-size" class="block text-lg font-semibold mb-2">Tamanho Aproximado:</label>
-                            <select id="neon-size" name="neonSize" class="w-full p-3 border border-gray-300 rounded-md focus:ring-accent-blue-neon focus:border-accent-blue-neon">
+                            <select id="neon-size" name="neonSize" class="w-full p-3 border border-gray-300 rounded-md focus:ring-accent-blue focus:border-accent-blue">
                                 <option value="small">Pequeno (até 40cm)</option>
                                 <option value="medium">Médio (40cm - 80cm)</option>
                                 <option value="large">Grande (80cm - 120cm)</option>
@@ -176,47 +166,47 @@
                         </div>
                         <div class="mb-6">
                             <label for="client-email" class="block text-lg font-semibold mb-2">Seu Email para Contato:</label>
-                            <input type="email" id="client-email" name="clientEmail" class="w-full p-3 border border-gray-300 rounded-md focus:ring-accent-blue-neon focus:border-accent-blue-neon" placeholder="seuemail@exemplo.com" required>
+                            <input type="email" id="client-email" name="clientEmail" class="w-full p-3 border border-gray-300 rounded-md focus:ring-accent-blue focus:border-accent-blue" placeholder="seuemail@exemplo.com" required>
                         </div>
                         
                         <div class="mb-6">
                             <label for="client-phone" class="block text-lg font-semibold mb-2">Seu Telefone para Contato:</label>
-                            <input type="tel" id="client-phone" name="clientPhone" class="w-full p-3 border border-gray-300 rounded-md focus:ring-accent-blue-neon focus:border-accent-blue-neon" placeholder="(XX) XXXXX-XXXX" required>
+                            <input type="tel" id="client-phone" name="clientPhone" class="w-full p-3 border border-gray-300 rounded-md focus:ring-accent-blue focus:border-accent-blue" placeholder="(XX) XXXXX-XXXX" required>
                         </div>
                         <div class="mb-6">
                             <label for="upload-image" class="block text-lg font-semibold mb-2">Envie seu rascunho ou imagem de referência:</label>
                             <p class="text-sm text-gray-500 mt-1">
-                                Por favor, envie sua imagem para <strong class="text-accent-pink-neon">netuno.netuno89@gmail.com</strong>
+                                Por favor, envie sua imagem para <strong class="text-accent-blue">netuno.netuno89@gmail.com</strong>
                                 após enviar este formulário. Lembre-se de mencionar o texto do letreiro ou seu nome no assunto do e-mail para que possamos relacionar.<br>
                             </p>
                         </div>
-                        <button type="submit" class="bg-accent-blue-neon text-white px-8 py-4 rounded-full shadow-lg hover:bg-opacity-90 transition-colors text-xl font-semibold w-full">Solicitar Orçamento</button>
+                        <button type="submit" class="bg-highlight-red text-white px-8 py-4 rounded-full shadow-lg hover:bg-opacity-90 transition-colors text-xl font-semibold w-full">Solicitar Orçamento</button>
                     </form>
                 </div>
             </div>
         </section>
 
-        <section id="why-choose-us-section" class="py-16 bg-secondary-light scroll-mt-24">
+        <section id="why-choose-us-section" class="py-16 bg-E5DDC8 scroll-mt-24">
             <div class="container mx-auto px-4">
                 <h2 class="text-4xl font-black text-center mb-12 text-primary-dark">Por Que Escolher a NETUNO?</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
                     <div class="bg-white p-6 rounded-lg shadow-custom flex flex-col items-center">
-                        <span class="text-6xl text-accent-blue-neon mb-4">💡</span>
+                        <span class="text-6xl text-accent-blue mb-4">💡</span>
                         <h3 class="text-xl font-bold mb-2 text-primary-dark">Cores Vibrantes</h3>
                         <p class="text-gray-700">Tecnologia LED de alta qualidade para cores intensas e duradouras.</p>
                     </div>
                     <div class="bg-white p-6 rounded-lg shadow-custom flex flex-col items-center">
-                        <span class="text-6xl text-accent-blue-neon mb-4">⚡</span>
+                        <span class="text-6xl text-accent-blue mb-4">⚡</span>
                         <h3 class="text-xl font-bold mb-2 text-primary-dark">Economia de Energia</h3>
                         <p class="text-gray-700">LEDs eficientes que consomem menos energia que o neon tradicional.</p>
                     </div>
                     <div class="bg-white p-6 rounded-lg shadow-custom flex flex-col items-center">
-                        <span class="text-6xl text-accent-blue-neon mb-4">🛠️</span>
+                        <span class="text-6xl text-accent-blue mb-4">🛠️</span>
                         <h3 class="text-xl font-bold mb-2 text-primary-dark">Fácil Instalação</h3>
                         <p class="text-gray-700">Leves e seguros, nossos letreiros são simples de instalar em qualquer ambiente.</p>
                     </div>
                     <div class="bg-white p-6 rounded-lg shadow-custom flex flex-col items-center">
-                        <span class="text-6xl text-accent-blue-neon mb-4">🛡️</span>
+                        <span class="text-6xl text-accent-blue mb-4">🛡️</span>
                         <h3 class="text-xl font-bold mb-2 text-primary-dark">Durabilidade</h3>
                         <p class="text-gray-700">Materiais resistentes garantem uma longa vida útil ao seu letreiro.</p>
                     </div>
@@ -228,12 +218,12 @@
             <div class="container mx-auto px-4">
                 <h2 class="text-4xl font-black text-center mb-12">Galeria de Inspirações</h2>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <img src="https://placehold.co/600x400/00BFFF/FFFFFF?text=Letreiro+Bar" alt="Letreiro de bar" class="w-full h-auto rounded-lg shadow-custom object-cover">
-                    <img src="https://placehold.co/600x400/343A40/FFFFFF?text=Decoração+Casa" alt="Decoração de casa" class="w-full h-auto rounded-lg shadow-custom object-cover">
-                    <img src="https://placehold.co/600x400/F8F9FA/343A40?text=Evento+Especial" alt="Letreiro para evento" class="w-full h-auto rounded-lg shadow-custom object-cover">
-                    <img src="https://placehold.co/600x400/343A40/FFFFFF?text=Loja+Comercial" alt="Letreiro de loja" class="w-full h-auto rounded-lg shadow-custom object-cover">
-                    <img src="https://placehold.co/600x400/00BFFF/FFFFFF?text=Quarto+Personalizado" alt="Letreiro de quarto" class="w-full h-auto rounded-lg shadow-custom object-cover">
-                    <img src="https://placehold.co/600x400/343A40/FFFFFF?text=Escritório+Moderno" alt="Letreiro de escritório" class="w-full h-auto rounded-lg shadow-custom object-cover">
+                    <img src="https://placehold.co/600x400/01949A/FFFFFF?text=Letreiro+Bar" alt="Letreiro de bar" class="w-full h-auto rounded-lg shadow-custom object-cover">
+                    <img src="https://placehold.co/600x400/DB1F48/FFFFFF?text=Decoração+Casa" alt="Decoração de casa" class="w-full h-auto rounded-lg shadow-custom object-cover">
+                    <img src="https://placehold.co/600x400/F8E9A1/004369?text=Evento+Especial" alt="Letreiro para evento" class="w-full h-auto rounded-lg shadow-custom object-cover">
+                    <img src="https://placehold.co/600x400/004369/FFFFFF?text=Loja+Comercial" alt="Letreiro de loja" class="w-full h-auto rounded-lg shadow-custom object-cover">
+                    <img src="https://placehold.co/600x400/01949A/FFFFFF?text=Quarto+Personalizado" alt="Letreiro de quarto" class="w-full h-auto rounded-lg shadow-custom object-cover">
+                    <img src="https://placehold.co/600x400/DB1F48/FFFFFF?text=Escritório+Moderno" alt="Letreiro de escritório" class="w-full h-auto rounded-lg shadow-custom object-cover">
                 </div>
             </div>
         </section>
@@ -242,11 +232,11 @@
     <footer class="bg-primary-dark text-white p-8 text-center mt-auto">
         <div class="container mx-auto">
             <h3 class="text-2xl font-bold mb-4">NETUNO</h3>
-            <p class="mb-2">Entre em contato: <a href="mailto:netuno.netuno89@gmail.com" class="text-accent-pink-neon hover:underline">netuno.netuno89@gmail.com</a></p>
-            <p class="mb-4">Telefone: <a href="tel:+5511959961063" class="text-accent-pink-neon hover:underline">(11) 95996-1063</a></p>
+            <p class="mb-2">Entre em contato: <a href="mailto:netuno.netuno89@gmail.com" class="text-accent-blue hover:underline">netuno.netuno89@gmail.com</a></p>
+            <p class="mb-4">Telefone: <a href="tel:+5511959961063" class="text-accent-blue hover:underline">(11) 95996-1063</a></p>
             <p class="mb-4">
                 Fale conosco pelo WhatsApp:
-                <a href="https://wa.me/5511959961063?text=Ol%C3%A1%2C%20venho%20do%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%3F%20%F0%9F%98%81" class="text-accent-pink-neon hover:underline" target="_blank">
+                <a href="https://wa.me/5511959961063?text=Ol%C3%A1%2C%20venho%20do%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%3F%20%F0%9F%98%81" class="text-accent-blue hover:underline" target="_blank">
                     (11) 95996-1063
                 </a>
             </p>
@@ -268,7 +258,7 @@
                 <div class="md:w-1/2">
                     <h3 id="modal-product-name" class="text-3xl font-black mb-2 text-primary-dark"></h3>
                     <p id="modal-product-description" class="text-gray-700 mb-6"></p>
-                    <a href="#customize-section" class="bg-accent-blue-neon text-white px-6 py-3 rounded-full font-semibold hover:bg-opacity-90 transition-colors block text-center">Solicitar Orçamento</a>
+                    <a href="#customize-section" class="bg-highlight-red text-white px-6 py-3 rounded-full font-semibold hover:bg-opacity-90 transition-colors block text-center">Solicitar Orçamento</a>
                 </div>
             </div>
         </div>
@@ -277,20 +267,20 @@
     <div id="message-modal" class="fixed inset-0 flex items-center justify-center hidden modal-overlay p-4">
         <div class="bg-white rounded-lg shadow-lg p-6 w-11/12 md:w-1/3 text-center modal-content relative">
             <p id="message-text" class="text-xl font-semibold mb-4 text-primary-dark"></p>
-            <button class="bg-accent-blue-neon text-white px-4 py-2 rounded-lg hover:bg-opacity-90 transition-colors" onclick="hideMessageModal()">OK</button>
+            <button class="bg-accent-blue text-white px-4 py-2 rounded-lg hover:bg-opacity-90 transition-colors" onclick="hideMessageModal()">OK</button>
         </div>
     </div>
 
     <script>
         const products = [
-            { id: 1, name: 'Letreiro "Love"', image: 'https://placehold.co/400x300/00BFFF/FFFFFF?text=Love+Neon', description: 'Um clássico atemporal, perfeito para decorar quartos, salas ou eventos especiais. Emite uma luz suave e romântica.' },
-            { id: 2, name: 'Símbolo "Coração"', image: 'https://placehold.co/400x300/FF1493/FFFFFF?text=Coração+Neon', description: 'Adicione um toque de carinho e estilo ao seu ambiente com este vibrante coração LED neon.' },
-            { id: 3, name: 'Frase "Good Vibes"', image: 'https://placehold.co/400x300/F8F9FA/343A40?text=Good+Vibes+Neon', description: 'Mantenha a energia positiva! Ideal para escritórios, estúdios ou espaços de convivência.' },
-            { id: 4, name: 'Ícone "Raio"', image: 'https://placehold.co/400x300/343A40/F8F9FA?text=Raio+Neon', description: 'Um símbolo de energia e modernidade. Perfeito para gamers, bares ou ambientes descolados.' },
-            { id: 5, name: 'Letreiro "Café"', image: 'https://placehold.co/400x300/00BFFF/FFFFFF?text=Café+Neon', description: 'Ideal para cafeterias, cozinhas ou cantinhos do café. Um convite luminoso para um bom momento.' },
-            { id: 6, name: 'Seta Direcional', image: 'https://placehold.co/400x300/343A40/FFFFFF?text=Seta+Neon', description: 'Perfeita para indicar direções em eventos, lojas ou simplesmente como um elemento de design divertido.' },
-            { id: 7, name: 'Planeta "Saturno"', image: 'https://placehold.co/400x300/F8F9FA/343A40?text=Saturno+Neon', description: 'Traga o universo para mais perto com este letreiro detalhado de Saturno. Um toque cósmico para seu espaço.' },
-            { id: 8, name: 'Letreiro "Sonhe Alto"', image: 'https://placehold.co/400x300/343A40/F8F9FA?text=Sonhe+Alto+Neon', description: 'Inspiração diária para alcançar seus objetivos. Ideal para escritórios, quartos ou espaços criativos.' }
+            { id: 1, name: 'Letreiro "Love"', image: 'https://placehold.co/400x300/DB1F48/FFFFFF?text=Love+Neon', description: 'Um clássico atemporal, perfeito para decorar quartos, salas ou eventos especiais. Emite uma luz suave e romântica.' },
+            { id: 2, name: 'Símbolo "Coração"', image: 'https://placehold.co/400x300/01949A/FFFFFF?text=Coração+Neon', description: 'Adicione um toque de carinho e estilo ao seu ambiente com este vibrante coração LED neon.' },
+            { id: 3, name: 'Frase "Good Vibes"', image: 'https://placehold.co/400x300/F8E9A1/004369?text=Good+Vibes+Neon', description: 'Mantenha a energia positiva! Ideal para escritórios, estúdios ou espaços de convivência.' },
+            { id: 4, name: 'Ícone "Raio"', image: 'https://placehold.co/400x300/004369/F8E9A1?text=Raio+Neon', description: 'Um símbolo de energia e modernidade. Perfeito para gamers, bares ou ambientes descolados.' },
+            { id: 5, name: 'Letreiro "Café"', image: 'https://placehold.co/400x300/DB1F48/FFFFFF?text=Café+Neon', description: 'Ideal para cafeterias, cozinhas ou cantinhos do café. Um convite luminoso para um bom momento.' },
+            { id: 6, name: 'Seta Direcional', image: 'https://placehold.co/400x300/01949A/FFFFFF?text=Seta+Neon', description: 'Perfeita para indicar direções em eventos, lojas ou simplesmente como um elemento de design divertido.' },
+            { id: 7, name: 'Planeta "Saturno"', image: 'https://placehold.co/400x300/F8E9A1/004369?text=Saturno+Neon', description: 'Traga o universo para mais perto com este letreiro detalhado de Saturno. Um toque cósmico para seu espaço.' },
+            { id: 8, name: 'Letreiro "Sonhe Alto"', image: 'https://placehold.co/400x300/004369/F8E9A1?text=Sonhe+Alto+Neon', description: 'Inspiração diária para alcançar seus objetivos. Ideal para escritórios, quartos ou espaços criativos.' }
         ];
 
         const sections = ['home-section', 'products-section', 'customize-section', 'why-choose-us-section', 'gallery-section'];
@@ -323,7 +313,7 @@
                     <div class="p-4">
                         <h3 class="text-xl font-semibold mb-2 text-primary-dark">${product.name}</h3>
                         <p class="text-gray-700 text-sm">${product.description.substring(0, 70)}...</p>
-                        <a href="#customize-section" class="bg-accent-blue-neon text-white px-4 py-2 rounded-lg w-full hover:bg-opacity-90 transition-colors text-base font-semibold mt-4 block text-center">Solicitar Orçamento</a>
+                        <a href="#customize-section" class="bg-accent-blue text-white px-4 py-2 rounded-lg w-full hover:bg-opacity-90 transition-colors text-base font-semibold mt-4 block text-center">Solicitar Orçamento</a>
                     </div>
                 `;
                 productCard.querySelector('img').onclick = () => showProductModal(product.id);
