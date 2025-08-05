@@ -130,7 +130,7 @@
                 <h2 class="text-4xl font-black text-center mb-12">Crie Seu Letreiro Personalizado</h2>
                 <p class="text-lg text-center max-w-3xl mx-auto mb-10">Transforme sua ideia em luz! Preencha os detalhes abaixo para solicitar um orçamento para o seu letreiro LED neon exclusivo.</p>
                 <div class="bg-white text-primary-dark p-8 rounded-lg shadow-lg max-w-2xl mx-auto">
-                    <form id="quote-form" action="https://formspree.io/f/mzzvvknq" method="POST">
+                    <form id="quote-form" action="https://formspree.io/f/mzzvvknq" method="POST" enctype="multipart/form-data">
                         <div class="mb-6">
                             <label for="custom-text" class="block text-lg font-semibold mb-2">Texto ou Frase:</label>
                             <input type="text" id="custom-text" name="customText" class="w-full p-3 border border-gray-300 rounded-md focus:ring-accent-blue focus:border-accent-blue" placeholder="Ex: 'Good Vibes Only'" required>
@@ -173,13 +173,17 @@
                             <label for="client-phone" class="block text-lg font-semibold mb-2">Seu Telefone para Contato:</label>
                             <input type="tel" id="client-phone" name="clientPhone" class="w-full p-3 border border-gray-300 rounded-md focus:ring-accent-blue focus:border-accent-blue" placeholder="(XX) XXXXX-XXXX" required>
                         </div>
+
                         <div class="mb-6">
-                            <label for="upload-image" class="block text-lg font-semibold mb-2">Envie seu rascunho ou imagem de referência:</label>
+                            <label for="design-file" class="block text-lg font-semibold mb-2">Envie seu rascunho ou imagem de referência:</label>
+                            <input type="file" id="design-file" name="designFile" accept="image/*, .pdf" class="w-full p-3 border border-gray-300 rounded-md focus:ring-accent-blue focus:border-accent-blue">
                             <p class="text-sm text-gray-500 mt-1">
-                                Por favor, envie sua imagem para <strong class="text-accent-blue">netuno.netuno89@gmail.com</strong>
-                                após enviar este formulário. Lembre-se de mencionar o texto do letreiro ou seu nome no assunto do e-mail para que possamos relacionar.<br>
+                                Para uploads de arquivos grandes ou múltiplos, por favor, envie-os separadamente para
+                                <strong class="text-accent-blue">netuno.netuno89@gmail.com</strong>
+                                ou entre em contato via WhatsApp. Lembre-se de mencionar o texto do letreiro ou seu nome no assunto do e-mail.
                             </p>
                         </div>
+
                         <button type="submit" class="bg-highlight-red text-white px-8 py-4 rounded-full shadow-lg hover:bg-opacity-90 transition-colors text-xl font-semibold w-full">Solicitar Orçamento</button>
                     </form>
                 </div>
@@ -353,15 +357,18 @@
             const clientEmail = formData.get('clientEmail');
             const clientPhone = formData.get('clientPhone');
 
+            // Validação básica do formulário
             if (!customText || !clientEmail || !clientPhone) {
                 showMessageModal('Por favor, preencha o texto, seu email e seu telefone para contato.');
                 return;
             }
 
+            // Ação de envio do formulário Formspree
             try {
                 const response = await fetch('https://formspree.io/f/mzzvvknq', {
                     method: 'POST',
-                    body: formData
+                    body: formData,
+                    // O Formspree lida com o cabeçalho Content-Type automaticamente para multipart/form-data
                 });
 
                 if (response.ok) {
