@@ -60,6 +60,66 @@
             width: 36px; /* Ajuste o tamanho do ícone SVG */
             height: 36px; /* Ajuste o tamanho do ícone SVG */
         }
+
+        /* Estilos para a seção de administração */
+        .admin-section {
+            background-color: #f0f0f0;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        .admin-section input,
+        .admin-section textarea,
+        .admin-section button {
+            margin-bottom: 10px;
+            padding: 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            width: 100%;
+        }
+        .admin-section button {
+            background-color: #004369;
+            color: white;
+            cursor: pointer;
+            border: none;
+        }
+        .admin-section button:hover {
+            opacity: 0.9;
+        }
+        .admin-product-card {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #eee;
+            border-radius: 5px;
+            background-color: #fff;
+        }
+        .admin-product-card img {
+            width: 80px;
+            height: 60px;
+            object-fit: cover;
+            margin-right: 10px;
+            border-radius: 4px;
+        }
+        .admin-product-card .details {
+            flex-grow: 1;
+        }
+        .admin-product-card .details h4 {
+            font-weight: bold;
+        }
+        .admin-product-card .remove-button {
+            background-color: #DB1F48;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            width: auto;
+        }
+        .admin-product-card .remove-button:hover {
+            opacity: 0.8;
+        }
     </style>
 </head>
 <body class="min-h-screen flex flex-col">
@@ -76,6 +136,7 @@
                     <li><a href="#products-section" class="hover:text-accent-blue transition-colors text-lg font-medium">Modelos</a></li>
                     <li><a href="#customize-section" class="hover:text-accent-blue transition-colors text-lg font-medium">Personalize</a></li>
                     <li><a href="#gallery-section" class="hover:text-accent-blue transition-colors text-lg font-medium">Galeria</a></li>
+                    <li><a href="#admin-section" class="hover:text-accent-blue transition-colors text-lg font-medium">Admin</a></li>
                 </ul>
             </nav>
 
@@ -98,6 +159,7 @@
                 <li><a href="#products-section" class="block py-2 text-xl hover:text-accent-blue transition-colors font-medium">Modelos</a></li>
                 <li><a href="#customize-section" class="block py-2 text-xl hover:text-accent-blue transition-colors font-medium">Personalize</a></li>
                 <li><a href="#gallery-section" class="block py-2 text-xl hover:text-accent-blue transition-colors font-medium">Galeria</a></li>
+                <li><a href="#admin-section" class="block py-2 text-xl hover:text-accent-blue transition-colors font-medium">Admin</a></li>
                 <li>
                     <a href="https://wa.me/5511959961063?text=Ol%C3%A1%2C%20venho%20do%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%3F%20%F0%9F%98%81" target="_blank" class="bg-highlight-red text-white px-6 py-2 rounded-full font-semibold hover:bg-opacity-80 transition-colors block mx-auto w-3/4 mt-4">
                         Fale Conosco
@@ -130,7 +192,7 @@
                 <h2 class="text-4xl font-black text-center mb-12">Crie Seu Letreiro Personalizado</h2>
                 <p class="text-lg text-center max-w-3xl mx-auto mb-10">Transforme sua ideia em luz! Preencha os detalhes abaixo para solicitar um orçamento para o seu letreiro LED neon exclusivo.</p>
                 <div class="bg-white text-primary-dark p-8 rounded-lg shadow-lg max-w-2xl mx-auto">
-                    <form id="quote-form" action="https://formspree.io/f/mzzvvknq" method="POST">
+                    <form id="quote-form" action="https://formspree.io/f/mdkdwwwl" method="POST">
                         <div class="mb-6">
                             <label for="custom-text" class="block text-lg font-semibold mb-2">Texto ou Frase:</label>
                             <input type="text" id="custom-text" name="customText" class="w-full p-3 border border-gray-300 rounded-md focus:ring-accent-blue focus:border-accent-blue" placeholder="Ex: 'Good Vibes Only'" required>
@@ -227,7 +289,24 @@
                 </div>
             </div>
         </section>
-    </main>
+
+        <section id="admin-section" class="py-16 bg-[#E5DDC8] scroll-mt-24">
+            <div class="container mx-auto px-4">
+                <h2 class="text-4xl font-black text-center mb-12 text-primary-dark">Gerenciar Modelos (Admin)</h2>
+                <div class="admin-section bg-white p-8 rounded-lg shadow-lg max-w-2xl mx-auto">
+                    <h3 class="text-2xl font-bold mb-4 text-primary-dark">Adicionar Novo Modelo</h3>
+                    <input type="text" id="admin-image-url" placeholder="URL da Imagem (Ex: https://exemplo.com/imagem.jpg)">
+                    <input type="text" id="admin-product-name" placeholder="Nome do Modelo (Ex: Letreiro 'Sonhe')">
+                    <textarea id="admin-product-description" placeholder="Descrição do Modelo"></textarea>
+                    <button onclick="addProduct()">Adicionar Modelo</button>
+                    
+                    <h3 class="text-2xl font-bold mt-8 mb-4 text-primary-dark">Modelos Atuais</h3>
+                    <div id="admin-product-list">
+                        </div>
+                </div>
+            </div>
+        </section>
+        </main>
 
     <footer class="bg-primary-dark text-white p-8 text-center mt-auto">
         <div class="container mx-auto">
@@ -272,7 +351,8 @@
     </div>
 
     <script>
-        const products = [
+        let products = [
+            // Produtos iniciais, serão carregados do LocalStorage ou usados como padrão se não houver nada salvo
             { id: 1, name: 'Letreiro "Love"', image: 'https://placehold.co/400x300/DB1F48/FFFFFF?text=Love+Neon', description: 'Um clássico atemporal, perfeito para decorar quartos, salas ou eventos especiais. Emite uma luz suave e romântica.' },
             { id: 2, name: 'Símbolo "Coração"', image: 'https://placehold.co/400x300/01949A/FFFFFF?text=Coração+Neon', description: 'Adicione um toque de carinho e estilo ao seu ambiente com este vibrante coração LED neon.' },
             { id: 3, name: 'Frase "Good Vibes"', image: 'https://placehold.co/400x300/F8E9A1/004369?text=Good+Vibes+Neon', description: 'Mantenha a energia positiva! Ideal para escritórios, estúdios ou espaços de convivência.' },
@@ -283,8 +363,9 @@
             { id: 8, name: 'Letreiro "Sonhe Alto"', image: 'https://placehold.co/400x300/004369/F8E9A1?text=Sonhe+Alto+Neon', description: 'Inspiração diária para alcançar seus objetivos. Ideal para escritórios, quartos ou espaços criativos.' }
         ];
 
-        const sections = ['home-section', 'products-section', 'customize-section', 'why-choose-us-section', 'gallery-section'];
+        const sections = ['home-section', 'products-section', 'customize-section', 'why-choose-us-section', 'gallery-section', 'admin-section'];
         const productList = document.getElementById('product-list');
+        const adminProductList = document.getElementById('admin-product-list');
 
         const productModal = document.getElementById('product-modal');
         const modalProductName = document.getElementById('modal-product-name');
@@ -296,6 +377,23 @@
 
         const quoteForm = document.getElementById('quote-form');
 
+        // Admin inputs
+        const adminImageUrl = document.getElementById('admin-image-url');
+        const adminProductName = document.getElementById('admin-product-name');
+        const adminProductDescription = document.getElementById('admin-product-description');
+
+        // Funções para gerenciar o LocalStorage
+        function saveProducts() {
+            localStorage.setItem('neonProducts', JSON.stringify(products));
+        }
+
+        function loadProducts() {
+            const savedProducts = localStorage.getItem('neonProducts');
+            if (savedProducts) {
+                products = JSON.parse(savedProducts);
+            }
+        }
+
         function navigateTo(sectionId) {
             const targetSection = document.getElementById(sectionId);
             if (targetSection) {
@@ -305,7 +403,10 @@
 
         function renderProducts() {
             productList.innerHTML = '';
+            adminProductList.innerHTML = ''; // Limpa a lista de admin também
+
             products.forEach(product => {
+                // Renderizar para a seção de modelos (clientes)
                 const productCard = document.createElement('div');
                 productCard.className = 'bg-white rounded-lg shadow-custom overflow-hidden transform transition-transform hover:scale-105 cursor-pointer';
                 productCard.innerHTML = `
@@ -319,6 +420,19 @@
                 productCard.querySelector('img').onclick = () => showProductModal(product.id);
                 productCard.querySelector('h3').onclick = () => showProductModal(product.id);
                 productList.appendChild(productCard);
+
+                // Renderizar para a seção de administração
+                const adminCard = document.createElement('div');
+                adminCard.className = 'admin-product-card';
+                adminCard.innerHTML = `
+                    <img src="${product.image}" alt="${product.name}">
+                    <div class="details">
+                        <h4>${product.name}</h4>
+                        <p class="text-gray-600 text-sm">${product.description.substring(0, 100)}...</p>
+                    </div>
+                    <button class="remove-button" onclick="removeProduct(${product.id})">Remover</button>
+                `;
+                adminProductList.appendChild(adminCard);
             });
         }
         
@@ -344,6 +458,37 @@
         function hideMessageModal() {
             messageModal.classList.add('hidden');
         }
+
+        function addProduct() {
+            const imageUrl = adminImageUrl.value;
+            const name = adminProductName.value;
+            const description = adminProductDescription.value;
+
+            if (!imageUrl || !name || !description) {
+                showMessageModal('Por favor, preencha todos os campos para adicionar um produto.');
+                return;
+            }
+
+            const newId = products.length > 0 ? Math.max(...products.map(p => p.id)) + 1 : 1;
+            const newProduct = { id: newId, name, image: imageUrl, description };
+            
+            products.push(newProduct);
+            saveProducts();
+            renderProducts();
+            
+            adminImageUrl.value = '';
+            adminProductName.value = '';
+            adminProductDescription.value = '';
+            showMessageModal('Modelo adicionado com sucesso!');
+        }
+
+        function removeProduct(id) {
+            products = products.filter(product => product.id !== id);
+            saveProducts();
+            renderProducts();
+            showMessageModal('Modelo removido com sucesso!');
+        }
+
 
         quoteForm.addEventListener('submit', async (event) => {
             event.preventDefault();
@@ -381,7 +526,8 @@
         });
 
         document.addEventListener('DOMContentLoaded', () => {
-            renderProducts();
+            loadProducts(); // Carrega os produtos salvos ao carregar a página
+            renderProducts(); // Renderiza os produtos (para clientes e admin)
         });
         
         // JS para o menu responsivo
