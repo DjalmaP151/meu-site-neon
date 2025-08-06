@@ -94,7 +94,7 @@
             border: 1px solid #eee;
             border-radius: 5px;
             background-color: #fff;
-            position: relative;
+            position: relative; /* Necessário para posicionar botões de ação */
         }
         .admin-product-card img {
             width: 80px;
@@ -111,7 +111,7 @@
         }
         .admin-product-card .actions {
             display: flex;
-            gap: 5px;
+            gap: 5px; /* Espaçamento entre os botões */
         }
         .admin-product-card .remove-button,
         .admin-product-card .edit-button {
@@ -120,7 +120,7 @@
             border-radius: 4px;
             cursor: pointer;
             width: auto;
-            white-space: nowrap;
+            white-space: nowrap; /* Evita que o texto quebre */
         }
         .admin-product-card .remove-button {
             background-color: #DB1F48;
@@ -130,7 +130,7 @@
             opacity: 0.8;
         }
         .admin-product-card .edit-button {
-            background-color: #01949A;
+            background-color: #01949A; /* Cor de destaque para o botão editar */
             color: white;
         }
         .admin-product-card .edit-button:hover {
@@ -145,6 +145,7 @@
                 <img src="https://i.ibb.co/k6z6ZHq1/Gemini-Generated-Image-gne52dgne52dgne5.png" alt="Logo da NETUNO" class="h-16" />
                 <span class="text-3xl font-black">NETUNO</span>
             </div>
+
             <nav class="hidden md:block">
                 <ul class="flex space-x-6">
                     <li><a href="#home-section" class="hover:text-accent-blue transition-colors text-lg font-medium">Início</a></li>
@@ -154,17 +155,20 @@
                     <li><a href="#admin-section" class="hover:text-accent-blue transition-colors text-lg font-medium">Admin</a></li>
                 </ul>
             </nav>
+
             <div class="hidden md:block">
                 <a href="https://wa.me/5511959961063?text=Ol%C3%A1%2C%20venho%20do%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%3F%20%F0%9F%98%81" target="_blank" class="bg-highlight-red text-white px-6 py-2 rounded-full font-semibold hover:bg-opacity-80 transition-colors">
                     Fale Conosco
                 </a>
             </div>
+
             <button id="menu-button" class="text-white md:hidden focus:outline-none">
                 <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                 </svg>
             </button>
         </div>
+
         <div id="mobile-menu" class="hidden md:hidden bg-primary-dark w-full text-center py-4 transition-all duration-300 ease-in-out">
             <ul class="flex flex-col space-y-4">
                 <li><a href="#home-section" class="block py-2 text-xl hover:text-accent-blue transition-colors font-medium">Início</a></li>
@@ -180,6 +184,7 @@
             </ul>
         </div>
     </header>
+
     <main class="flex-grow pt-24">
         <section id="home-section" class="py-20 text-center bg-accent-blue text-white flex flex-col items-center justify-center min-h-[calc(100vh-6rem)]">
             <h1 class="text-5xl md:text-7xl font-black mb-4 leading-tight">Ilumine Seu Espaço com <span class="text-secondary-accent">LED Neon</span> Personalizado</h1>
@@ -189,6 +194,7 @@
                 <a href="#customize-section" class="bg-secondary-accent text-primary-dark px-8 py-4 rounded-full shadow-lg hover:opacity-90 transition-opacity text-xl font-semibold">Personalize o Seu</a>
             </div>
         </section>
+
         <section id="products-section" class="py-16 bg-[#E5DDC8] scroll-mt-24">
             <div class="container mx-auto px-4">
                 <h2 class="text-4xl font-black text-center mb-12 text-primary-dark">Nossos Modelos Prontos</h2>
@@ -196,6 +202,7 @@
                 </div>
             </div>
         </section>
+
         <section id="customize-section" class="py-16 bg-primary-dark text-white scroll-mt-24">
             <div class="container mx-auto px-4">
                 <h2 class="text-4xl font-black text-center mb-12">Crie Seu Letreiro Personalizado</h2>
@@ -256,6 +263,7 @@
                 </div>
             </div>
         </section>
+
         <section id="why-choose-us-section" class="py-16 bg-[#E5DDC8] scroll-mt-24">
             <div class="container mx-auto px-4">
                 <h2 class="text-4xl font-black text-center mb-12 text-primary-dark">Por Que Escolher a NETUNO?</h2>
@@ -268,7 +276,7 @@
                     <div class="bg-white p-6 rounded-lg shadow-custom flex flex-col items-center">
                         <span class="text-6xl text-accent-blue mb-4">⚡</span>
                         <h3 class="text-xl font-bold mb-2 text-primary-dark">Economia de Energia</h3>
-                        <p class="text-gray-700">Consumo de energia até 10x menor que lâmpadas tradicionais.</p>
+                        <p class="text-gray-700">LEDs eficientes que consomem menos energia que o neon tradicional.</p>
                     </div>
                     <div class="bg-white p-6 rounded-lg shadow-custom flex flex-col items-center">
                         <span class="text-6xl text-accent-blue mb-4">🛠️</span>
@@ -283,11 +291,12 @@
                 </div>
             </div>
         </section>
+
         <section id="gallery-section" class="py-16 bg-primary-dark text-white scroll-mt-24">
             <div class="container mx-auto px-4">
                 <h2 class="text-4xl font-black text-center mb-12">Galeria de Inspirações</h2>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <img src="https://placehold.co/600x400/01949A/FFFFFF?text=Bar" alt="bar" class="w-full h-auto rounded-lg shadow-custom object-cover">
+                    <img src="https://placehold.co/600x400/01949A/FFFFFF?text=Letreiro+Bar" alt="Letreiro de bar" class="w-full h-auto rounded-lg shadow-custom object-cover">
                     <img src="https://placehold.co/600x400/DB1F48/FFFFFF?text=Decoração+Casa" alt="Decoração de casa" class="w-full h-auto rounded-lg shadow-custom object-cover">
                     <img src="https://placehold.co/600x400/F8E9A1/004369?text=Evento+Especial" alt="Letreiro para evento" class="w-full h-auto rounded-lg shadow-custom object-cover">
                     <img src="https://placehold.co/600x400/004369/FFFFFF?text=Loja+Comercial" alt="Letreiro de loja" class="w-full h-auto rounded-lg shadow-custom object-cover">
@@ -296,6 +305,7 @@
                 </div>
             </div>
         </section>
+
         <section id="admin-section" class="py-16 bg-[#E5DDC8] scroll-mt-24">
             <div class="container mx-auto px-4">
                 <h2 class="text-4xl font-black text-center mb-12 text-primary-dark">Gerenciar Modelos (Admin)</h2>
@@ -315,6 +325,7 @@
             </div>
         </section>
         </main>
+
     <footer class="bg-primary-dark text-white p-8 text-center mt-auto">
         <div class="container mx-auto">
             <h3 class="text-2xl font-bold mb-4">NETUNO</h3>
@@ -329,11 +340,13 @@
             <p>&copy; 2025 NETUNO. Todos os direitos reservados.</p>
         </div>
     </footer>
+
     <a href="https://wa.me/5511959961063?text=Ol%C3%A1%2C%20venho%20do%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%3F%20%F0%9F%98%81" class="whatsapp-button" target="_blank" aria-label="Fale conosco pelo WhatsApp">
         <svg viewBox="0 0 24 24" width="24" height="24" class="fill-current">
             <path d="M12.04 2c-5.45 0-9.91 4.46-9.91 9.91 0 1.75.5 3.44 1.46 4.96L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.45 0 9.91-4.46 9.91-9.91S17.49 2 12.04 2zm3.62 14.07c-.12.3-.47.39-.7.26-.3-.15-1.76-.87-2.03-.97-.28-.1-.48-.15-.69.11-.2.27-.78.97-.95 1.16-.17.2-.34.22-.63.09-.3-.12-.99-.37-1.88-.93-.68-.4-1.29-.9-1.71-1.57-.42-.68-.45-1.25-.32-1.46.13-.2.3-.35.45-.49.15-.15.2-.26.3-.44.1-.19.05-.36-.02-.5-.07-.13-.69-1.65-.95-2.26-.25-.6-.5-1.04-.54-1.12-.04-.08-.33-.27-.7-.6-.37-.34-.97-.93-.95-1.76.02-.85.42-1.24.58-1.4.15-.17.33-.2.45-.2.12 0 .26.02.43.08.17.06.41.16.63.43.23.27.75.76.79.82.04.06.07.12.01.25-.06.13-.39.42-.51.56-.12.15-.25.32-.34.42-.1.1-.01.19.12.4.12.2.4.66.86 1.05.47.4.9.65 1.29.83.4.18.7.25.94.2.25-.05.8-.32 1.05-.4.26-.08.4-.13.62.01.22.14.73.84 1.05 1.03.32.2.55.3.63.31.07.02.32.01.48-.05.15-.06.47-.18.89-.35.42-.18.76-.32 1.07-.4.32-.08.6-.13.88.07.28.2.35.62.2 1.08-.14.45-.53.94-.96 1.29z"/>
         </svg>
     </a>
+
     <div id="product-modal" class="fixed inset-0 flex items-center justify-center hidden modal-overlay p-4">
         <div class="bg-white rounded-lg shadow-lg p-6 w-11/12 md:w-2/3 lg:w-1/2 max-h-[90vh] overflow-y-auto modal-content relative">
             <button class="absolute top-3 right-3 text-gray-500 hover:text-gray-800 text-3xl" onclick="hideProductModal()">&times;</button>
@@ -347,21 +360,23 @@
             </div>
         </div>
     </div>
+
     <div id="message-modal" class="fixed inset-0 flex items-center justify-center hidden modal-overlay p-4">
         <div class="bg-white rounded-lg shadow-lg p-6 w-11/12 md:w-1/3 text-center modal-content relative">
             <p id="message-text" class="text-xl font-semibold mb-4 text-primary-dark"></p>
             <button class="bg-accent-blue text-white px-4 py-2 rounded-lg hover:bg-opacity-90 transition-colors" onclick="hideMessageModal()">OK</button>
         </div>
     </div>
+
     <script>
         let products = [
             // Produtos iniciais, serão carregados do LocalStorage ou usados como padrão se não houver nada salvo
-            { id: 1, name: 'Letreiro "Diversos"', image: 'https://placehold.co/400x300/DB1F48/FFFFFF?text=Love+Neon', description: 'Um clássico atemporal, perfeito para decorar quartos, salas ou eventos especiais. Emite uma luz suave e romântica.' },
-            { id: 2, name: 'Coração "Mexicana"', image: 'https://placehold.co/400x300/01949A/FFFFFF?text=Coração+Neon', description: 'Adicione um toque de carinho e estilo ao seu ambiente com este vibrante coração LED neon.' },
-            { id: 3, name: 'Frase "Good Vibes"', image: 'https://placehold.co/400x300/F8E9A1/004369?text=Good+Vibes+Neon', description: 'Mantenha a energia positiva! Ideal para escritórios, estúdios ou espaços de convivência.' },
-            { id: 4, name: 'Caveira Mexicana', image: 'https://placehold.co/400x300/004369/F8E9A1?text=Caveira+Mexicana', description: 'Um símbolo de energia e modernidade. Perfeito para gamers, bares ou ambientes descolados.' },
-            { id: 5, name: 'Letreiro "Café"', image: 'https://placehold.co/400x300/DB1F48/FFFFFF?text=Café+Neon', description: 'Ideal para cafeterias, cozinhas ou cantinhos do café. Um convite luminoso para um bom momento.' },
-            { id: 6, name: 'SKAT', image: 'https://placehold.co/400x300/01949A/FFFFFF?text=Seta+Neon', description: 'Perfeita para indicar direções em eventos, lojas ou simplesmente como um elemento de design divertido.' },
+            { id: 1, name: 'Letreiro "Diversos"', image: 'https://placehold.co/400x300/DB1F48/FFFFFF?text=Torre+neon', description: 'Um clássico atemporal, perfeito para decorar quartos, salas ou eventos especiais. Emite uma luz suave e romântica.' },
+            { id: 2, name: 'Cavera "Mexicana"', image: 'https://placehold.co/400x300/01949A/FFFFFF?text=Cavera+Neon', description: 'Adicione um toque de carinho e estilo ao seu ambiente com este vibrante coração LED neon.' },
+            { id: 3, name: 'Frase "Good Vibes"', image: 'https://placehold.co/400x300/F8E9A1/004369?text=SKAT+Neon', description: 'Mantenha a energia positiva! Ideal para escritórios, estúdios ou espaços de convivência.' },
+            { id: 4, name: 'Ícone "Cavera"', image: 'https://placehold.co/400x300/004369/F8E9A1?text=Bloco+Neon', description: 'Um símbolo de energia e modernidade. Perfeito para gamers, bares ou ambientes descolados.' },
+            { id: 5, name: 'Letreiro "Café"', image: 'https://placehold.co/400x300/DB1F48/FFFFFF?text=Café', description: 'Ideal para cafeterias, cozinhas ou cantinhos do café. Um convite luminoso para um bom momento.' },
+            { id: 6, name: 'SKAT', image: 'https://placehold.co/400x300/01949A/FFFFFF?text=Skat+Neon', description: 'Perfeita para indicar direções em eventos, lojas ou simplesmente como um elemento de design divertido.' },
             { id: 7, name: 'Planeta "Saturno"', image: 'https://placehold.co/400x300/F8E9A1/004369?text=Saturno+Neon', description: 'Traga o universo para mais perto com este letreiro detalhado de Saturno. Um toque cósmico para seu espaço.' },
             { id: 8, name: 'Letreiro "Sonhe Alto"', image: 'https://placehold.co/400x300/004369/F8E9A1?text=Sonhe+Alto+Neon', description: 'Inspiração diária para alcançar seus objetivos. Ideal para escritórios, quartos ou espaços criativos.' }
         ];
@@ -369,21 +384,24 @@
         const sections = ['home-section', 'products-section', 'customize-section', 'why-choose-us-section', 'gallery-section', 'admin-section'];
         const productList = document.getElementById('product-list');
         const adminProductList = document.getElementById('admin-product-list');
+
         const productModal = document.getElementById('product-modal');
         const modalProductName = document.getElementById('modal-product-name');
         const modalProductImage = document.getElementById('modal-product-image');
         const modalProductDescription = document.getElementById('modal-product-description');
+        
         const messageModal = document.getElementById('message-modal');
         const messageText = document.getElementById('message-text');
+
         const quoteForm = document.getElementById('quote-form');
 
         // Admin inputs
-        const adminProductId = document.getElementById('admin-product-id');
+        const adminProductId = document.getElementById('admin-product-id'); // Novo: ID do produto em edição
         const adminImageUrl = document.getElementById('admin-image-url');
         const adminProductName = document.getElementById('admin-product-name');
         const adminProductDescription = document.getElementById('admin-product-description');
-        const addUpdateButton = document.getElementById('add-update-button');
-        const cancelEditButton = document.getElementById('cancel-edit-button');
+        const addUpdateButton = document.getElementById('add-update-button'); // Novo: Botão Adicionar/Atualizar
+        const cancelEditButton = document.getElementById('cancel-edit-button'); // Novo: Botão Cancelar
 
         // Funções para gerenciar o LocalStorage
         function saveProducts() {
@@ -406,7 +424,7 @@
 
         function renderProducts() {
             productList.innerHTML = '';
-            adminProductList.innerHTML = '';
+            adminProductList.innerHTML = ''; // Limpa a lista de admin também
 
             products.forEach(product => {
                 // Renderizar para a seção de modelos (clientes)
@@ -420,7 +438,8 @@
                         <a href="#customize-section" class="bg-accent-blue text-white px-4 py-2 rounded-lg w-full hover:bg-opacity-90 transition-colors text-base font-semibold mt-4 block text-center">Solicitar Orçamento</a>
                     </div>
                 `;
-                productCard.onclick = () => showProductModal(product.id);
+                productCard.querySelector('img').onclick = () => showProductModal(product.id);
+                productCard.querySelector('h3').onclick = () => showProductModal(product.id);
                 productList.appendChild(productCard);
 
                 // Renderizar para a seção de administração
@@ -464,6 +483,7 @@
             messageModal.classList.add('hidden');
         }
 
+        // NOVO: Função para preencher o formulário para edição
         function editProduct(id) {
             const productToEdit = products.find(p => p.id === id);
             if (productToEdit) {
@@ -471,90 +491,166 @@
                 adminImageUrl.value = productToEdit.image;
                 adminProductName.value = productToEdit.name;
                 adminProductDescription.value = productToEdit.description;
+
                 addUpdateButton.textContent = 'Atualizar Modelo';
-                cancelEditButton.style.display = 'block';
-                // Move a rolagem para o topo da seção de administração para facilitar a edição
-                document.getElementById('admin-section').scrollIntoView({ behavior: 'smooth' });
+                addUpdateButton.onclick = updateProduct; // Altera a função do botão para atualizar
+                cancelEditButton.style.display = 'block'; // Mostra o botão Cancelar
                 showMessageModal('Editando modelo. Altere os campos e clique em "Atualizar Modelo".');
             }
         }
 
+        // NOVO: Função para adicionar ou atualizar o produto
         function handleAddUpdateProduct() {
-            const id = adminProductId.value;
-            const imageUrl = adminImageUrl.value.trim();
-            const name = adminProductName.value.trim();
-            const description = adminProductDescription.value.trim();
+            const id = adminProductId.value; // Pega o ID (se estiver editando)
+            if (id) {
+                updateProduct(); // Se tiver ID, atualiza
+            } else {
+                addProduct(); // Se não tiver ID, adiciona
+            }
+        }
+
+        // Modificado: Lógica de Adicionar Produto (permanece a mesma, só é chamada por handleAddUpdateProduct)
+        function addProduct() {
+            const imageUrl = adminImageUrl.value;
+            const name = adminProductName.value;
+            const description = adminProductDescription.value;
 
             if (!imageUrl || !name || !description) {
-                showMessageModal('Por favor, preencha todos os campos para adicionar ou atualizar o modelo.');
+                showMessageModal('Por favor, preencha todos os campos para adicionar um produto.');
                 return;
             }
 
-            if (id) {
-                // Atualizar produto existente
-                const index = products.findIndex(p => p.id == id);
-                if (index > -1) {
-                    products[index] = { id: parseInt(id), name, image: imageUrl, description };
-                }
-            } else {
-                // Adicionar novo produto
-                const newId = products.length > 0 ? Math.max(...products.map(p => p.id)) + 1 : 1;
-                products.push({ id: newId, name, image: imageUrl, description });
-            }
-
+            const newId = products.length > 0 ? Math.max(...products.map(p => p.id)) + 1 : 1;
+            const newProduct = { id: newId, name, image: imageUrl, description };
+            
+            products.push(newProduct);
             saveProducts();
             renderProducts();
-            clearAdminForm();
-            showMessageModal(id ? 'Modelo atualizado com sucesso!' : 'Novo modelo adicionado com sucesso!');
+            
+            adminImageUrl.value = '';
+            adminProductName.value = '';
+            adminProductDescription.value = '';
+            showMessageModal('Modelo adicionado com sucesso!');
         }
 
-        function removeProduct(id) {
-            if (confirm('Tem certeza que deseja remover este modelo?')) {
-                products = products.filter(p => p.id !== id);
+        // NOVO: Função para atualizar um produto existente
+        function updateProduct() {
+            const idToUpdate = parseInt(adminProductId.value);
+            const imageUrl = adminImageUrl.value;
+            const name = adminProductName.value;
+            const description = adminProductDescription.value;
+
+            if (!imageUrl || !name || !description) {
+                showMessageModal('Por favor, preencha todos os campos para atualizar o produto.');
+                return;
+            }
+
+            const productIndex = products.findIndex(p => p.id === idToUpdate);
+            if (productIndex !== -1) {
+                products[productIndex] = { id: idToUpdate, name, image: imageUrl, description };
                 saveProducts();
                 renderProducts();
-                showMessageModal('Modelo removido com sucesso!');
+                showMessageModal('Modelo atualizado com sucesso!');
+                cancelEdit(); // Limpa o formulário e reverte o botão
+            } else {
+                showMessageModal('Erro: Modelo não encontrado para atualização.');
             }
         }
 
-        function clearAdminForm() {
+        // NOVO: Função para cancelar a edição e limpar o formulário
+        function cancelEdit() {
             adminProductId.value = '';
             adminImageUrl.value = '';
             adminProductName.value = '';
             adminProductDescription.value = '';
             addUpdateButton.textContent = 'Adicionar Modelo';
-            cancelEditButton.style.display = 'none';
+            addUpdateButton.onclick = handleAddUpdateProduct; // Volta a função para adicionar/atualizar
+            cancelEditButton.style.display = 'none'; // Esconde o botão Cancelar
         }
 
-        function cancelEdit() {
-            clearAdminForm();
-            showMessageModal('Edição cancelada.');
-        }
 
-        // Event Listeners
-        document.addEventListener('DOMContentLoaded', () => {
-            loadProducts();
+        function removeProduct(id) {
+            products = products.filter(product => product.id !== id);
+            saveProducts();
             renderProducts();
+            showMessageModal('Modelo removido com sucesso!');
+        }
 
-            // Mobile menu
-            const menuButton = document.getElementById('menu-button');
-            const mobileMenu = document.getElementById('mobile-menu');
-            menuButton.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
-            });
 
-            // Smooth scrolling para os links do menu
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    document.getElementById(this.getAttribute('href').substring(1)).scrollIntoView({
-                        behavior: 'smooth'
-                    });
+        quoteForm.addEventListener('submit', async (event) => {
+            event.preventDefault();
+
+            const formData = new FormData(quoteForm);
+            const customText = formData.get('customText');
+            const clientEmail = formData.get('clientEmail');
+            const clientPhone = formData.get('clientPhone');
+
+            if (!customText || !clientEmail || !clientPhone) {
+                showMessageModal('Por favor, preencha o texto, seu email e seu telefone para contato.');
+                return;
+            }
+
+            try {
+                const response = await fetch('https://formspree.io/f/mdkdwwwl', { // URL do Formspree corrigida
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json' // Importante para o Formspree retornar JSON
+                    }
                 });
+
+                if (response.ok) {
+                    showMessageModal('Orçamento solicitado com sucesso! Entraremos em contato em breve.');
+                    quoteForm.reset();
+                } else {
+                    const errorData = await response.json();
+                    showMessageModal(errorData.message || 'Erro ao solicitar orçamento. Tente novamente.');
+                }
+            } catch (error) {
+                console.error('Erro de rede ou servidor:', error);
+                showMessageModal('Houve um problema ao conectar com o servidor. Por favor, tente novamente.');
+            }
+        });
+
+
+        // Menu mobile
+        const menuButton = document.getElementById('menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Fechar menu mobile ao clicar em um item
+        mobileMenu.querySelectorAll('a').forEach(item => {
+            item.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
             });
         });
 
+        // Navegação suave ao clicar nos links do header
+        document.querySelectorAll('header nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                navigateTo(targetId);
+            });
+        });
+        document.querySelectorAll('#mobile-menu a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                navigateTo(targetId);
+            });
+        });
+
+
+        // Inicialização
+        document.addEventListener('DOMContentLoaded', () => {
+            loadProducts(); // Carrega produtos do LocalStorage
+            renderProducts(); // Renderiza os produtos na página e no admin
+        });
     </script>
 </body>
-</html>
 
+</html>
